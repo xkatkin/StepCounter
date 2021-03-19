@@ -5,7 +5,7 @@
 
 int     addressMPU  = 0x68;
 int     addressOLED = 0x3C;
-int16_t accelX, accelY, accelZ;
+int32_t accelX, accelY, accelZ;
 float   stepVector;
 int     stepCount = 0;
 
