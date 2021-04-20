@@ -1,13 +1,16 @@
+
 #include <Wire.h>
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_Sensor.h>
+
 
 int     addressMPU  = 0x68;
 int     addressOLED = 0x3C;
 int32_t accelX, accelY, accelZ;
 float   stepVector;
 int     stepCount = 0;
+
 
 Adafruit_MPU6050 mpu;
 Adafruit_SSD1306 display = Adafruit_SSD1306(128, 64, &Wire);
@@ -38,7 +41,7 @@ void showStep() {
   display.setCursor(0, 0);
   display.println("WELCOME!");
   display.setCursor(0, 12);
-  display.println("StepCounter v1.0");
+  display.println("StepCounter v1.1");
   display.println("----------------");
   display.display();
 
@@ -58,7 +61,7 @@ void countStep() {
   stepVector = vector;
   delay(600);
 }
- 
+
 void setup() {
   Wire.begin();
   setMPU6050();
